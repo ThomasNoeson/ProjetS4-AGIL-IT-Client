@@ -1,9 +1,21 @@
-<ul>
-  <li *ngIf="authService.isLoggedOut$ | async"><a [routerLink]="['/login']">Login</a></li>
-  <li *ngIf="authService.isLoggedIn$ | async"><a [routerLink]="['/profile']">Profile</a></li>
-  <li *ngIf="authService.isLoggedIn$ | async"><button (click)="logout()">logout</button></li>
-  <li><a [routerLink]="['/ro']">Exo RO</a></li>
-</ul>
+<mat-toolbar>
+  <span>Ludothèque</span>
+  <span class="example-spacer"></span>
+  <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">
+    Login
+  </button>
+  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/profile" routerLinkActive="active">
+    Profile
+  </button>
+  <button *ngIf="authService.isLoggedIn$ | async" mat-button (click)="logout()">
+    Logout
+  </button>
+  <button mat-button [routerLink]="['/ro']">
+    Exercice RO
+  </button>
+</mat-toolbar>
+
+
 <router-outlet></router-outlet>
 
 <p-toast position="top-right" key="main"></p-toast>
