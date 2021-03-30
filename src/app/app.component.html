@@ -1,7 +1,7 @@
 <mat-toolbar>
-  <span>Gestion dépenses</span>
+  <span>Ludothèque</span>
   <span class="example-spacer"></span>
-  <button mat-button routerLink="/acceuil" routerLinkActive="active">
+  <button mat-button routerLink="/jeux" routerLinkActive="active">
     Acceuil
   </button>
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">

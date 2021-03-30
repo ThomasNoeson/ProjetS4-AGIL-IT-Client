@@ -28,6 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import { AcceuilComponent } from './acceuil/acceuil.component';
+import { JeuxComponent } from './jeux/jeux.component';
+import {JeuxService} from './_services/jeux.service';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -37,7 +39,8 @@ registerLocaleData(localeFr, 'fr');
     LoginComponent,
     ProfileComponent,
     LpSolverTestComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    JeuxComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ registerLocaleData(localeFr, 'fr');
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
-    UserService
+    UserService,
+    JeuxService
   ],
   bootstrap: [AppComponent]
 })
