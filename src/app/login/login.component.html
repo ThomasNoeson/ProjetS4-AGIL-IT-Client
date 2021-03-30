@@ -1,5 +1,14 @@
-<form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
-  Email : <input type="text" formControlName="email"><br>
-  Mot de passe : <input type="password" formControlName="password"><br>
-  <button [disabled]="!formulaire.valid">Valide</button>
-</form>
+
+
+
+<p-card header="Login"  [style]="{width: '360px', margin: '10% auto 0 auto'}" styleClass="p-card-shadow">
+  <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+    <input type="text" pInputText placeholder="E-mail">
+    <input type="password" placeholder="Password" formControlName="password"><br>
+  </form>
+  <ng-template pTemplate="footer">
+    <p-button [disabled]="!formulaire.valid" label="Valider"></p-button>
+  </ng-template>
+</p-card>
+
+

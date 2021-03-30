@@ -25,6 +25,8 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {ButtonModule} from 'primeng/button';
+import {CardModule} from 'primeng/card';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -49,7 +51,9 @@ registerLocaleData(localeFr, 'fr');
     TabMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ButtonModule,
+    CardModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
