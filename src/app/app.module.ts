@@ -30,6 +30,7 @@ import {CardModule} from 'primeng/card';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { JeuxComponent } from './jeux/jeux.component';
 import {JeuxService} from './_services/jeux.service';
+import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -40,7 +41,8 @@ registerLocaleData(localeFr, 'fr');
     ProfileComponent,
     LpSolverTestComponent,
     AcceuilComponent,
-    JeuxComponent
+    JeuxComponent,
+    AjoutUtilisateurComponent
   ],
   imports: [
     BrowserModule,

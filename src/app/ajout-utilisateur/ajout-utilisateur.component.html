@@ -1,0 +1,66 @@
+<form [formGroup]="formulaire">
+  <mat-form-field appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input matInput placeholder="nom" formControlName="nom">
+    <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="mat-error">
+      <mat-error *ngIf="nom?.errors.required">Le nom est obligatoire</mat-error>
+      <mat-error *ngIf="nom?.errors.minlength">Le nom doit comporter au moins 2 caractères</mat-error>
+      <mat-error *ngIf="nom?.errors.maxlength">Le nom peut comporter au maximum 100 caractères</mat-error>
+    </div>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Prénom</mat-label>
+    <input matInput placeholder="prenom" formControlName="prenom">
+    <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="mat-error">
+      <mat-error *ngIf="prenom?.errors.required">Le prénom est obligatoire</mat-error>
+      <mat-error *ngIf="prenom?.errors.minlength">Le prénom doit comporter au moins 2 caractères</mat-error>
+      <mat-error *ngIf="prenom?.errors.maxlength">Le prénom peut comporter au maximum 100 caractères</mat-error>
+    </div>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Pseudo</mat-label>
+    <input matInput placeholder="pseudo" formControlName="pseudo">
+    <div *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)" class="mat-error">
+      <mat-error *ngIf="pseudo?.errors.required">Le pseudo est obligatoire</mat-error>
+      <mat-error *ngIf="pseudo?.errors.minlength">Le pseudo doit comporter au moins 2 caractères</mat-error>
+      <mat-error *ngIf="pseudo?.errors.maxlength">Le pseudo peut comporter au maximum 100 caractères</mat-error>
+    </div>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Mail</mat-label>
+    <input matInput placeholder="mail" formControlName="mail">
+    <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="mat-error">
+      <mat-error *ngIf="mail?.errors.required">L'email est obligatoire</mat-error>
+      <mat-error *ngIf="mail?.errors.email">L'email est invalide</mat-error>
+    </div>
+  </mat-form-field>
+  <br>
+
+  <div formGroupName="password">
+    <mat-form-field appearance="outline">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput placeholder="mdp" formControlName="mdp">
+      <div *ngIf="mdp.invalid && (mdp.dirty || mdp.touched)" class="mat-error">
+        <mat-error *ngIf="mdp?.errors.required">Le mot de passe est obligatoire</mat-error>
+        <mat-error *ngIf="mdp?.errors.minLength">Le mot de passe doit contenir au moins 8 caractères</mat-error>
+      </div>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Retaper votre mot de passe</mat-label>
+      <input matInput placeholder="confirmMdp" formControlName="confirmMdp">
+      <div *ngIf="confirmMdp.invalid && (confirmMdp.dirty || confirmMdp.touched)" class="mat-error">
+        <mat-error *ngIf="confirmMdp?.errors.required">La confirmation du mot de passe est obligatoire</mat-error>
+        <mat-error *ngIf="confirmMdp?.errors.minLength">Le mot de passe doit contenir au moins 8 caractères</mat-error>
+      </div>
+    </mat-form-field>
+    <div *ngIf="password.invalid && password.touched && confirmMdp.touched">Le mot de passe doit être identique</div>
+    <br>
+  </div>
+
+  <button [disabled]="!formulaire.valid">Valide</button>
+</form>
