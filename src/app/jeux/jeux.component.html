@@ -1,5 +1,27 @@
-<p>jeux works!</p>
-
-<div *ngIf="!loading" >
-  <h2 ># {{jeux.id}} </h2>
+<h1>Liste des jeux de la ludothèque</h1>
+<div class="box">
+  <p-dropdown [options]="sortOptions" placeholder="Trier par" (onChange)="onSortChange($event)"
+              styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+</div>
+<div *ngIf="!loading" class="p-grid p-ai-stretch vertical-container">
+  <br>
+  <p-panel *ngFor="let j of jeux" header="{{j.nom}} {{j.id}}" class="p-lg-4 conf">
+    <img [src]="'assets/jeux.jpg'" [alt]="j.nom" class="config-image"/>
+    <h2>Description</h2>
+    <p>{{j.description}}</p>
+    <h2>Régles</h2>
+    <p>Catégorie temporairement retirée de l'affichage car les balises dans la base de données gâchent tous.</p>
+    <h2>Durée</h2>
+    <p>{{j.duree}}</p>
+    <h2>Langue</h2>
+    <p>{{j.langue}}</p>
+    <h2>Nombre de joueurs</h2>
+    <p>{{j.nombre_joueurs}}</p>
+    <h2>Poids</h2>
+    <p>{{j.poids}}</p>
+    <h2>Age</h2>
+    <p>{{j.age}}</p>
+    <h2>Catégorie</h2>
+    <p>{{j.categorie}}</p>
+  </p-panel>
 </div>

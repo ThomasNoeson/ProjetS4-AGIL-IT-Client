@@ -31,6 +31,9 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { JeuxComponent } from './jeux/jeux.component';
 import {JeuxService} from './_services/jeux.service';
 import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur.component';
+import {PanelModule} from 'primeng/panel';
+import {DataViewModule} from 'primeng/dataview';
+import {DropdownModule} from 'primeng/dropdown';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -60,7 +63,10 @@ registerLocaleData(localeFr, 'fr');
     MatIconModule,
     MatButtonModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    PanelModule,
+    DataViewModule,
+    DropdownModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},

@@ -14,8 +14,7 @@ const routes: Routes = [
   {path: 'logout', component: AcceuilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'ro', component: LpSolverTestComponent},
-  {path: 'util', component: AjoutUtilisateurComponent}
+  {path: 'ro', component: LpSolverTestComponent}
 ];
 
 @NgModule({

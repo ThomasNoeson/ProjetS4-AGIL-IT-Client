@@ -18,7 +18,22 @@ export class JeuxService {
   }
 
   getJeux(): Observable<JeuxInfo> {
-    return this.http.get<any>(environment.apiUrl + '/jeux?age=100', httpOptions)
+    return this.http.get<any>(environment.apiUrl + '/jeux', httpOptions)
+      .pipe(
+        map(rep => rep.data.item),
+        catchError(err => throwError(err))
+      );
+  }
+
+  getJeuxTri($event): Observable<JeuxInfo> {
+    if ($event.value === 'nom') {
+      return this.http.get<any>(environment.apiUrl + '/jeux?sort=nom', httpOptions)
+        .pipe(
+          map(rep => rep.data.item),
+          catchError(err => throwError(err))
+        );
+    }
+    return this.http.get<any>(environment.apiUrl + '/jeux?sort=note', httpOptions)
       .pipe(
         map(rep => rep.data.item),
         catchError(err => throwError(err))
