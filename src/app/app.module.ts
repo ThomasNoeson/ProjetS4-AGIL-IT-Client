@@ -27,6 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
+import { AcceuilComponent } from './acceuil/acceuil.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -35,7 +36,8 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    LpSolverTestComponent
+    LpSolverTestComponent,
+    AcceuilComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,9 @@
 <mat-toolbar>
-  <span>Ludothèque</span>
+  <span>Gestion dépenses</span>
   <span class="example-spacer"></span>
+  <button mat-button routerLink="/acceuil" routerLinkActive="active">
+    Acceuil
+  </button>
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">
     Login
   </button>
@@ -10,10 +13,11 @@
   <button *ngIf="authService.isLoggedIn$ | async" mat-button (click)="logout()">
     Logout
   </button>
-  <button mat-button [routerLink]="['/ro']">
+  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/ro" routerLinkActive="active">
     Exercice RO
   </button>
 </mat-toolbar>
+
 
 
 <router-outlet></router-outlet>

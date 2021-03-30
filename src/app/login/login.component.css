@@ -1,0 +1,19 @@
+
+input {
+  width: 90%;
+  margin: 5%;
+}
+
+button {
+  width: 90%;
+  margin: 5%;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: cadetblue;
+  color: white;
+}
+

@@ -5,10 +5,8 @@
   <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
     <input type="text" pInputText placeholder="E-mail">
     <input type="password" placeholder="Password" formControlName="password"><br>
+    <button [disabled]="!formulaire.valid">Valider</button>
   </form>
-  <ng-template pTemplate="footer">
-    <p-button [disabled]="!formulaire.valid" label="Valider"></p-button>
-  </ng-template>
 </p-card>
 
 
