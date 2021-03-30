@@ -7,7 +7,7 @@
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">
     Login
   </button>
-  <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/create" routerLinkActive="active">
+  <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/util" routerLinkActive="active">
     Create user
   </button>
   <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/profile" routerLinkActive="active">

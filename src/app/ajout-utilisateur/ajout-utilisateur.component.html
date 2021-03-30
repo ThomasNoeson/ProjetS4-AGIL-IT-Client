@@ -1,66 +1,71 @@
 <form [formGroup]="formulaire">
-  <mat-form-field appearance="outline">
-    <mat-label>Nom</mat-label>
-    <input matInput placeholder="nom" formControlName="nom">
-    <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="mat-error">
-      <mat-error *ngIf="nom?.errors.required">Le nom est obligatoire</mat-error>
-      <mat-error *ngIf="nom?.errors.minlength">Le nom doit comporter au moins 2 caractères</mat-error>
-      <mat-error *ngIf="nom?.errors.maxlength">Le nom peut comporter au maximum 100 caractères</mat-error>
+  <div class="p-formgroup">
+    <div class="p-field">
+      <label for="nom" class="p-sr-only">Nom</label>
+      <input id="nom" type="text" pInputText placeholder="Nom" formControlName="nom">
+      <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="mat-error">
+        <div *ngIf="nom?.errors.required" style="color: crimson">Le nom est obligatoire</div>
+        <div *ngIf="nom?.errors.minlength" style="color: crimson">Le nom doit comporter au moins 2 caracteres</div>
+        <div *ngIf="nom?.errors.nomInvalid" style="color: crimson">Le nom est invalide</div>
+      </div>
     </div>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="outline">
-    <mat-label>Prénom</mat-label>
-    <input matInput placeholder="prenom" formControlName="prenom">
-    <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="mat-error">
-      <mat-error *ngIf="prenom?.errors.required">Le prénom est obligatoire</mat-error>
-      <mat-error *ngIf="prenom?.errors.minlength">Le prénom doit comporter au moins 2 caractères</mat-error>
-      <mat-error *ngIf="prenom?.errors.maxlength">Le prénom peut comporter au maximum 100 caractères</mat-error>
+  </div>
+  <div class="p-formgroup">
+    <div class="p-field">
+      <label for="prenom" class="p-sr-only">Prenom</label>
+      <input id="prenom" type="text" pInputText placeholder="Prenom" formControlName="prenom">
+      <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="mat-error">
+        <div *ngIf="prenom?.errors.required" style="color: crimson">Le prenom est obligatoire</div>
+        <div *ngIf="prenom?.errors.minlength" style="color: crimson">Le prenom doit comporter au moins 2 caracteres
+        </div>
+        <div *ngIf="prenom?.errors.nomInvalid" style="color: crimson">Le prenom est invalide</div>
+      </div>
     </div>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="outline">
-    <mat-label>Pseudo</mat-label>
-    <input matInput placeholder="pseudo" formControlName="pseudo">
-    <div *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)" class="mat-error">
-      <mat-error *ngIf="pseudo?.errors.required">Le pseudo est obligatoire</mat-error>
-      <mat-error *ngIf="pseudo?.errors.minlength">Le pseudo doit comporter au moins 2 caractères</mat-error>
-      <mat-error *ngIf="pseudo?.errors.maxlength">Le pseudo peut comporter au maximum 100 caractères</mat-error>
+  </div>
+  <div class="p-formgroup">
+    <div class="p-field">
+      <label for="pseudo" class="p-sr-only">Pseudo</label>
+      <input id="pseudo" type="text" pInputText placeholder="Pseudo" formControlName="pseudo">
+      <div *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)" class="mat-error">
+        <div *ngIf="pseudo?.errors.required" style="color: crimson">Le pseudo est obligatoire</div>
+        <div *ngIf="pseudo?.errors.minlength" style="color: crimson">Le pseudo doit comporter au moins 2 caracteres
+        </div>
+        <div *ngIf="pseudo?.errors.nomInvalid" style="color: crimson">Le pseudo est invalide</div>
+      </div>
     </div>
-  </mat-form-field>
-  <br>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Mail</mat-label>
-    <input matInput placeholder="mail" formControlName="mail">
-    <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="mat-error">
-      <mat-error *ngIf="mail?.errors.required">L'email est obligatoire</mat-error>
-      <mat-error *ngIf="mail?.errors.email">L'email est invalide</mat-error>
+  </div>
+  <div class="p-formgroup">
+    <div class="p-field">
+      <label for="mail" class="p-sr-only">Mail</label>
+      <input id="mail" type="text" pInputText placeholder="Mail" formControlName="mail">
+      <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="mat-error">
+        <div *ngIf="mail?.errors.required" style="color: crimson">Le mail est obligatoire</div>
+        <div *ngIf="mail?.errors.nomInvalid" style="color: crimson">Le mail est invalide</div>
+      </div>
     </div>
-  </mat-form-field>
-  <br>
-
+  </div>
   <div formGroupName="password">
-    <mat-form-field appearance="outline">
-      <mat-label>Mot de passe</mat-label>
-      <input matInput placeholder="mdp" formControlName="mdp">
-      <div *ngIf="mdp.invalid && (mdp.dirty || mdp.touched)" class="mat-error">
-        <mat-error *ngIf="mdp?.errors.required">Le mot de passe est obligatoire</mat-error>
-        <mat-error *ngIf="mdp?.errors.minLength">Le mot de passe doit contenir au moins 8 caractères</mat-error>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <label for="pwd" class="p-sr-only">Password</label>
+        <input id="pwd" type="text" pInputText placeholder="Mot de passe" formControlName="pwd">
+        <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)" class="mat-error">
+          <div *ngIf="pwd?.errors.required" style="color: crimson">Le mot de passe est obligatoire</div>
+          <div *ngIf="pwd?.errors.nomInvalid" style="color: crimson">Le mot de passe est invalide</div>
+        </div>
       </div>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline">
-      <mat-label>Retaper votre mot de passe</mat-label>
-      <input matInput placeholder="confirmMdp" formControlName="confirmMdp">
-      <div *ngIf="confirmMdp.invalid && (confirmMdp.dirty || confirmMdp.touched)" class="mat-error">
-        <mat-error *ngIf="confirmMdp?.errors.required">La confirmation du mot de passe est obligatoire</mat-error>
-        <mat-error *ngIf="confirmMdp?.errors.minLength">Le mot de passe doit contenir au moins 8 caractères</mat-error>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <label for="passwordconfirm" class="p-sr-only">Password confirm</label>
+        <input id="passwordconfirm" type="text" pInputText placeholder="Confirmez le mot de passe" formControlName="passwordconfirm">
+        <div *ngIf="passwordconfirm.invalid && (pwd.dirty || passwordconfirm.touched)" class="mat-error">
+          <div *ngIf="passwordconfirm?.errors.required" style="color: crimson">La confirmation est obligatoire</div>
+        </div>
       </div>
-    </mat-form-field>
-    <div *ngIf="password.invalid && password.touched && confirmMdp.touched">Le mot de passe doit être identique</div>
-    <br>
+    </div>
+    <div *ngIf="!password.valid" style="color: crimson">Le mot de passe n'est pas identique</div>
   </div>
 
-  <button [disabled]="!formulaire.valid">Valide</button>
+  <button type="submit">Valide</button>
 </form>

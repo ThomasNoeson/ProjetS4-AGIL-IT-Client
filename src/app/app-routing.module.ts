@@ -5,6 +5,7 @@ import {ProfileComponent} from './profile/profile.component';
 import {LpSolverTestComponent} from './lp-solver-test/lp-solver-test.component';
 import {AcceuilComponent} from './acceuil/acceuil.component';
 import {JeuxComponent} from './jeux/jeux.component';
+import {AjoutUtilisateurComponent} from './ajout-utilisateur/ajout-utilisateur.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'jeux', pathMatch: 'full'},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'logout', component: AcceuilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'ro', component: LpSolverTestComponent}
+  {path: 'ro', component: LpSolverTestComponent},
+  {path: 'util', component: AjoutUtilisateurComponent}
 ];
 
 @NgModule({

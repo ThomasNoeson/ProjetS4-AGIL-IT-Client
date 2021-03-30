@@ -10,7 +10,7 @@ describe('AjoutUtilisateurComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AjoutUtilisateurComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
