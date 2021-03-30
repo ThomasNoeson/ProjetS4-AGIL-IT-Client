@@ -1,0 +1,56 @@
+<form [formGroup]="formulaire">
+  <div>
+    Nom : <input type="text" formControlName="nom"><br>
+  </div>
+  <br>
+  <div>
+    Description : <input type="text" formControlName="description"><br>
+  </div>
+  <br>
+  <div>
+    Thème : <input type="text" formControlName="theme" ><br>
+  </div>
+  <br>
+  <div>
+    Editeur : <input type="text" formControlName="editeur"><br>
+  </div>
+  <br>
+  <div>
+    Mecanique : <input type="text" formControlName="mecanique"><br>
+  </div>
+  <br>
+  <div>
+    Url_media : <input type="string" formControlName="url_media"><br>
+  </div>
+  <br>
+  <div>
+    Categorie : <input type="text" formControlName="categorie"><br>
+  </div>
+  <br>
+  <div>
+    Regles : <input type="text" formControlName="regles"><br>
+  </div>
+  <br>
+  <div>
+    Langue : <input type="string" formControlName="langue"><br>
+  </div>
+  <br>
+  <div>
+    Nombre de joueurs : <input type="number" formControlName="nombrejoueurs" ><br>
+  </div>
+  <br>
+  <div>
+    Age minimum : <input type="number" formControlName="ageminimum" ><br>
+  </div>
+  <br>
+  <div>
+    Poids : <input type="double" step="0.1"  formControlName="poids" ><br>
+  </div>
+  <br>
+  <div>
+    Duree : <input type="time" formControlName="duree"><br>
+  </div>
+  <br>
+  <button [disabled]="!formulaire.valid">Valide</button>
+
+</form>
