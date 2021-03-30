@@ -9,6 +9,7 @@ import {JeuxComponent} from './jeux/jeux.component';
 const routes: Routes = [
   {path: '', redirectTo: 'jeux', pathMatch: 'full'},
   {path: 'jeux', component: JeuxComponent},
+  {path: 'create', component: AjoutUtilisateurComponent},
   {path: 'logout', component: AcceuilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
