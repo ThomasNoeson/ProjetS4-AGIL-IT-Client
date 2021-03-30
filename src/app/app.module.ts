@@ -17,6 +17,7 @@ import 'moment/locale/fr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {JwtInterceptorService} from './_services/jwt-interceptor.service';
 import { ProfileComponent } from './profile/profile.component';
+import { GameDetailsComponent } from './game-details/game-details.component';
 import {UserService} from './_services/user.service';
 import { LpSolverTestComponent } from './lp-solver-test/lp-solver-test.component';
 import {MarkdownModule} from 'ngx-markdown';
@@ -33,6 +34,7 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     LoginComponent,
     ProfileComponent,
+    GameDetailsComponent,
     LpSolverTestComponent
   ],
   imports: [
