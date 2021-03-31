@@ -2,7 +2,7 @@
   <span>Ludothèque</span>
   <span class="example-spacer"></span>
   <button mat-button routerLink="/jeux" routerLinkActive="active">
-    Acceuil
+    Accueil
   </button>
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">
     Login
@@ -20,8 +20,6 @@
     Exercice RO
   </button>
 </mat-toolbar>
-
-
 
 <router-outlet></router-outlet>
 
