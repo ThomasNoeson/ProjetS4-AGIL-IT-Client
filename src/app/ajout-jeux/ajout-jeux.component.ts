@@ -8,7 +8,6 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
 })
 
 export class AjoutJeuxComponent implements OnInit {
-  loading: boolean;
   formulaire = new FormGroup({
     nom: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
     nombrejoueurs: new FormControl('', [Validators.required, Validators.pattern('^[2-8]*$'), Validators.maxLength(1)]),
@@ -17,11 +16,10 @@ export class AjoutJeuxComponent implements OnInit {
   });
 
   constructor() {
-    this.loading = false;
+
   }
 
   ngOnInit(): void {
-    this.loading = true;
   }
 
   get nom(): AbstractControl {
