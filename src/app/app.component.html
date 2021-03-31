@@ -10,9 +10,6 @@
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/create" routerLinkActive="active">
     Create user
   </button>
-  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/ajout_jeux" routerLinkActive="active">
-    Ajouter un jeu
-  </button>
   <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/profile" routerLinkActive="active">
     Profile
   </button>
