@@ -1,56 +1,67 @@
-<form [formGroup]="formulaire">
-  <div>
-    Nom : <input type="text" formControlName="nom"><br>
-  </div>
-  <br>
-  <div>
-    Description : <input type="text" formControlName="description"><br>
-  </div>
-  <br>
-  <div>
-    Thème : <input type="text" formControlName="theme" ><br>
-  </div>
-  <br>
-  <div>
-    Editeur : <input type="text" formControlName="editeur"><br>
-  </div>
-  <br>
-  <div>
-    Mecanique : <input type="text" formControlName="mecanique"><br>
-  </div>
-  <br>
-  <div>
-    Url_media : <input type="string" formControlName="url_media"><br>
-  </div>
-  <br>
-  <div>
-    Categorie : <input type="text" formControlName="categorie"><br>
-  </div>
-  <br>
-  <div>
-    Regles : <input type="text" formControlName="regles"><br>
-  </div>
-  <br>
-  <div>
-    Langue : <input type="string" formControlName="langue"><br>
-  </div>
-  <br>
-  <div>
-    Nombre de joueurs : <input type="number" formControlName="nombrejoueurs" ><br>
-  </div>
-  <br>
-  <div>
-    Age minimum : <input type="number" formControlName="ageminimum" ><br>
-  </div>
-  <br>
-  <div>
-    Poids : <input type="double" step="0.1"  formControlName="poids" ><br>
-  </div>
-  <br>
-  <div>
-    Duree : <input type="time" formControlName="duree"><br>
-  </div>
-  <br>
-  <button [disabled]="!formulaire.valid">Valide</button>
+<p-card header="Ajouter un jeu" [style]="{width: '360px', margin: '10% auto 0 auto'}" styleClass="p-card-shadow">
+  <form [formGroup]="formulaire">
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="nom" type="text" pInputText placeholder="Nom" formControlName="nom" class="input-taille">
+        <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="mat-error">
+          <div *ngIf="nom?.errors.required" style="color: crimson">Le nom est obligatoire</div>
+          <div *ngIf="nom?.errors.minlength" style="color: crimson">Le nom doit comporter au moins 10 caractères</div>
+          <div *ngIf="nom?.errors.maxlength" style="color: crimson">Le nom peut comporter au maximum </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="description" type="text" pInputText placeholder="Description" formControlName="description" class="input-taille">
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="theme" type="text" pInputText placeholder="Thème" formControlName="theme" class="input-taille">
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="editeur" type="text" pInputText placeholder="Éditeur" formControlName="editeur" class="input-taille">
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="mecanique" type="text" pInputText placeholder="Mécanique" formControlName="mecanique" class="input-taille">
+      </div>
+    </div>
 
-</form>
+    <img [src]="'assets/jeux.jpg'" class="config-image"/>
+
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="categorie" type="text" pInputText placeholder="Catégorie" formControlName="categorie" class="input-taille">
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="regles" type="text" pInputText placeholder="Règles" formControlName="regles" class="input-taille">
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="langue" type="text" pInputText placeholder="Langue" formControlName="langue" class="input-taille">
+      </div>
+    </div>
+
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="nombrejoueurs" type="text" pInputText placeholder="Nombre de joueur" formControlName="nombrejoueurs" class="input-taille">
+        <div *ngIf="nombrejoueurs.invalid && (nombrejoueurs.dirty || nombrejoueurs.touched)" class="mat-error">
+          <div *ngIf="nombrejoueurs?.errors.pattern" style="color: crimson">Le nombre de joueurs ne peut être compris qu'entre 2 et 8</div>
+        </div>
+      </div>
+    </div>
+
+
+    <button type="submit" class="config-bouton">Valide</button>
+  </form>
+</p-card>
+
+
+
