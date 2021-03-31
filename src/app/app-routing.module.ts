@@ -6,6 +6,7 @@ import {LpSolverTestComponent} from './lp-solver-test/lp-solver-test.component';
 import {AcceuilComponent} from './acceuil/acceuil.component';
 import {JeuxComponent} from './jeux/jeux.component';
 import {AjoutUtilisateurComponent} from './ajout-utilisateur/ajout-utilisateur.component';
+import {GameDetailsComponent} from './game-details/game-details.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'jeux', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'logout', component: AcceuilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'jeux/:id', component: GameDetailsComponent},
   {path: 'ro', component: LpSolverTestComponent}
 ];
 

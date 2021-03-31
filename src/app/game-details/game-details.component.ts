@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../_services/user.service';
 import {MessageService} from 'primeng/api';
 import {Router} from '@angular/router';
-import {GameDetailsService} from "../_services/game-details.service";
-import {GameDetails} from "../_models/game-details";
+import {GameDetailsService} from '../_services/game-details.service';
+import {GameDetails} from '../_models/game-details';
 
 @Component({
   selector: 'app-details-jeu',
