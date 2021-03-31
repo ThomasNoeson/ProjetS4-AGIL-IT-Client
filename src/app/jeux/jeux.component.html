@@ -13,15 +13,10 @@
     <p>Catégorie temporairement retirée de l'affichage car les balises dans la base de données gâchent tous.</p>
     <h2>Durée</h2>
     <p>{{j.duree}}</p>
-    <h2>Langue</h2>
-    <p>{{j.langue}}</p>
     <h2>Nombre de joueurs</h2>
     <p>{{j.nombre_joueurs}}</p>
-    <h2>Poids</h2>
-    <p>{{j.poids}}</p>
     <h2>Age</h2>
     <p>{{j.age}}</p>
-    <h2>Catégorie</h2>
-    <p>{{j.categorie}}</p>
+    <button pButton pRipple type="button" label="Plus d'informations" class="p-button-secondary" (click)="router.navigateByUrl('jeux/' + j.id)"></button>
   </p-panel>
 </div>

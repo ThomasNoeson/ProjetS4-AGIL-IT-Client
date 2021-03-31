@@ -1,3 +1,56 @@
+
+<p-card *ngIf="!loading" header="{{gameDetails.nom}}"  [style]="{width: '360px', margin: '10% auto 0 auto'}" styleClass="p-card-shadow">
+
+  <img [src]="'assets/jeux.jpg'" [alt]="'jeu'" class="config-image"/>
+
+  <h2>Description</h2>
+
+  <p>{{gameDetails.description}}</p>
+
+  <h2>Règles</h2>
+
+  <p>{{gameDetails.regles}}</p>
+
+  <h2>Détails</h2>
+
+  <table>
+    <tr>
+      <td>Langue</td>
+      <td>{{gameDetails.langue}}</td>
+    </tr>
+    <tr>
+      <td>Âge minimum</td>
+      <td>{{gameDetails.age}}</td>
+    </tr>
+    <tr>
+      <td>Nombre de joueurs</td>
+      <td>{{gameDetails.nombre_joueurs}}</td>
+    </tr>
+    <tr>
+      <td>Durée</td>
+      <td>{{gameDetails.duree}}</td>
+    </tr>
+    <tr>
+      <td>Thème</td>
+      <td>{{gameDetails.theme_id.nom}}</td>
+    </tr>
+    <tr>
+      <td>Catégorie</td>
+      <td>{{gameDetails.categorie}}</td>
+    </tr>
+    <tr>
+      <td>Éditeur</td>
+      <td>{{gameDetails.editeur_id.nom}}</td>
+    </tr>
+    <tr>
+      <td>Poids</td>
+      <td>{{gameDetails.poids}}</td>
+    </tr>
+  </table>
+</p-card>
+
+
+<!--
 <p>{{gameDetails.id}}</p>
 <p>{{gameDetails.nom}}</p>
 <p>{{gameDetails.description}}</p>
@@ -33,53 +86,4 @@
 <p>{{gameDetails.tarif.prixMin}}</p>
 <p>{{gameDetails.tarif.prixMoyen}}</p>
 <p>{{gameDetails.tarif.nbAchats}}</p>
-
-<header>
-  <h1>{{gameDetails.nom}}</h1>
-  <span>{{gameDetails.id}}</span>
-</header>
-
-<h2>Description</h2>
-
-<p>{{gameDetails.description}}</p>
-
-<h2>Règles</h2>
-
-<p>{{gameDetails.regles}}</p>
-
-<h2>Détails</h2>
-
-<table>
-  <tr>
-    <td>Langue</td>
-    <td>{{gameDetails.langue}}</td>
-  </tr>
-  <tr>
-    <td>Âge minimum</td>
-    <td>{{gameDetails.age}}</td>
-  </tr>
-  <tr>
-    <td>Nombre de joueurs</td>
-    <td>{{gameDetails.nombre_joueurs}}</td>
-  </tr>
-  <tr>
-    <td>Durée</td>
-    <td>{{gameDetails.duree}}</td>
-  </tr>
-  <tr>
-    <td>Thème</td>
-    <td>{{gameDetails.theme_id.nom}}</td>
-  </tr>
-  <tr>
-    <td>Catégorie</td>
-    <td>{{gameDetails.categorie}}</td>
-  </tr>
-  <tr>
-    <td>Éditeur</td>
-    <td>{{gameDetails.editeur_id.nom}}</td>
-  </tr>
-  <tr>
-    <td>Poids</td>
-    <td>{{gameDetails.poids}}</td>
-  </tr>
-</table>
+-->
