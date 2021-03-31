@@ -1,0 +1,85 @@
+<p>{{gameDetails.id}}</p>
+<p>{{gameDetails.nom}}</p>
+<p>{{gameDetails.description}}</p>
+<p>{{gameDetails.regles}}</p>
+<p>{{gameDetails.langue}}</p>
+<p>{{gameDetails.url_media}}</p>
+<p>{{gameDetails.age}}</p>
+<p>{{gameDetails.poids}}</p>
+<p>{{gameDetails.nombre_joueurs}}</p>
+<p>{{gameDetails.categorie}}</p>
+<p>{{gameDetails.duree}}</p>
+<p>{{gameDetails.user_id.id}}</p>
+<p>{{gameDetails.user_id.nom}}</p>
+<p>{{gameDetails.user_id.prenom}}</p>
+<p>{{gameDetails.user_id.pseudo}}</p>
+<p>{{gameDetails.user_id.email}}</p>
+<p>{{gameDetails.user_id.email_verified_at}}</p>
+<p>{{gameDetails.user_id.created_at}}</p>
+<p>{{gameDetails.user_id.updated_at}}</p>
+<p>{{gameDetails.theme_id.id}}</p>
+<p>{{gameDetails.theme_id.nom}}</p>
+<p>{{gameDetails.editeur_id.id}}</p>
+<p>{{gameDetails.editeur_id.nom}}</p>
+<p>{{gameDetails.commentaires}}</p>
+<p>{{gameDetails.statistiques.noteMax}}</p>
+<p>{{gameDetails.statistiques.noteMin}}</p>
+<p>{{gameDetails.statistiques.noteMoyenne}}</p>
+<p>{{gameDetails.statistiques.nbCommentaires}}</p>
+<p>{{gameDetails.statistiques.nbCommentairesTotal}}</p>
+<p>{{gameDetails.statistiques.rang}}</p>
+<p>{{gameDetails.statistiques.nbJeuxTheme}}</p>
+<p>{{gameDetails.tarif.prixMax}}</p>
+<p>{{gameDetails.tarif.prixMin}}</p>
+<p>{{gameDetails.tarif.prixMoyen}}</p>
+<p>{{gameDetails.tarif.nbAchats}}</p>
+
+<header>
+  <h1>{{gameDetails.nom}}</h1>
+  <span>{{gameDetails.id}}</span>
+</header>
+
+<h2>Description</h2>
+
+<p>{{gameDetails.description}}</p>
+
+<h2>Règles</h2>
+
+<p>{{gameDetails.regles}}</p>
+
+<h2>Détails</h2>
+
+<table>
+  <tr>
+    <td>Langue</td>
+    <td>{{gameDetails.langue}}</td>
+  </tr>
+  <tr>
+    <td>Âge minimum</td>
+    <td>{{gameDetails.age}}</td>
+  </tr>
+  <tr>
+    <td>Nombre de joueurs</td>
+    <td>{{gameDetails.nombre_joueurs}}</td>
+  </tr>
+  <tr>
+    <td>Durée</td>
+    <td>{{gameDetails.duree}}</td>
+  </tr>
+  <tr>
+    <td>Thème</td>
+    <td>{{gameDetails.theme_id.nom}}</td>
+  </tr>
+  <tr>
+    <td>Catégorie</td>
+    <td>{{gameDetails.categorie}}</td>
+  </tr>
+  <tr>
+    <td>Éditeur</td>
+    <td>{{gameDetails.editeur_id.nom}}</td>
+  </tr>
+  <tr>
+    <td>Poids</td>
+    <td>{{gameDetails.poids}}</td>
+  </tr>
+</table>
