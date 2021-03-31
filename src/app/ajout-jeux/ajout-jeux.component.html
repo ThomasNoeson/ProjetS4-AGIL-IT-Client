@@ -30,9 +30,12 @@
         <input id="mecanique" type="text" pInputText placeholder="Mécanique" formControlName="mecanique" class="input-taille">
       </div>
     </div>
-
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="url_media" type="text" pInputText placeholder="Url_media" formControlName="url_media" class="input-taille">
+      </div>
+    </div>
     <img [src]="'assets/jeux.jpg'" class="config-image"/>
-
     <div class="p-formgroup">
       <div class="p-field">
         <input id="categorie" type="text" pInputText placeholder="Catégorie" formControlName="categorie" class="input-taille">
@@ -48,17 +51,37 @@
         <input id="langue" type="text" pInputText placeholder="Langue" formControlName="langue" class="input-taille">
       </div>
     </div>
-
     <div class="p-formgroup">
       <div class="p-field">
-        <input id="nombrejoueurs" type="text" pInputText placeholder="Nombre de joueur" formControlName="nombrejoueurs" class="input-taille">
+        <input id="nombrejoueurs" type="number" pInputText placeholder="Nombre de joueur" formControlName="nombrejoueurs" class="input-taille">
         <div *ngIf="nombrejoueurs.invalid && (nombrejoueurs.dirty || nombrejoueurs.touched)" class="mat-error">
           <div *ngIf="nombrejoueurs?.errors.pattern" style="color: crimson">Le nombre de joueurs ne peut être compris qu'entre 2 et 8</div>
         </div>
       </div>
     </div>
-
-
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="ageminimum" type="number" pInputText placeholder="Age minimum" formControlName="ageminimum" class="input-taille">
+        <div *ngIf="ageminimum.invalid && (ageminimum.dirty || ageminimum.touched)" class="mat-error">
+          <div *ngIf="ageminimum?.errors.pattern" style="color: crimson">L'age minimum ne peut être compris qu'entre 1 et 16</div>
+        </div>
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="poids" type="text" pInputText placeholder="Poids" formControlName="poids" class="input-taille">
+        <div *ngIf="poids.invalid && (poids.dirty || poids.touched)" class="mat-error">
+          <div *ngIf="poids?.errors.pattern" style="color: crimson">Le poids ne peut être compris qu'entre 0.100 et 5.00 kg</div>
+          <div *ngIf="poids?.errors.min" style="color: crimson">Le poids ne peut etre inferieur à 0.100</div>
+          <div *ngIf="poids?.errors.max" style="color: crimson">Le poids ne peut etre supérieur à 5.00</div>
+        </div>
+      </div>
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <input id="duree" type="time" pInputText placeholder="Durée" formControlName="duree" class="input-taille">
+      </div>
+    </div>
     <button type="submit" class="config-bouton">Valide</button>
   </form>
 </p-card>
