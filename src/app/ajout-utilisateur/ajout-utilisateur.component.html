@@ -5,7 +5,8 @@
         <input id="nom" type="text" pInputText placeholder="Nom" formControlName="nom" class="input-taille">
         <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="mat-error">
           <div *ngIf="nom?.errors.required" style="color: crimson">Le nom est obligatoire</div>
-          <div *ngIf="nom?.errors.minlength" style="color: crimson">Le nom doit comporter au moins 2 caracteres</div>
+          <div *ngIf="nom?.errors.minlength" style="color: crimson">Le nom doit comporter au moins 2 caractères</div>
+          <div *ngIf="nom?.errors.maxlength" style="color: crimson">Le nom peut comporter au maximum 100 caractères</div>
           <div *ngIf="nom?.errors.nomInvalid" style="color: crimson">Le nom est invalide</div>
         </div>
       </div>
@@ -15,8 +16,8 @@
         <input id="prenom" type="text" pInputText placeholder="Prenom" formControlName="prenom" class="input-taille">
         <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="mat-error">
           <div *ngIf="prenom?.errors.required" style="color: crimson">Le prenom est obligatoire</div>
-          <div *ngIf="prenom?.errors.minlength" style="color: crimson">Le prenom doit comporter au moins 2 caracteres
-          </div>
+          <div *ngIf="prenom?.errors.minlength" style="color: crimson">Le prenom doit comporter au moins 2 caractères</div>
+          <div *ngIf="prenom?.errors.maxlength" style="color: crimson">Le prenom peut comporter au maximum 100 caractères</div>
           <div *ngIf="prenom?.errors.nomInvalid" style="color: crimson">Le prenom est invalide</div>
         </div>
       </div>
@@ -26,8 +27,8 @@
         <input id="pseudo" type="text" pInputText placeholder="Pseudo" formControlName="pseudo" class="input-taille">
         <div *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)" class="mat-error">
           <div *ngIf="pseudo?.errors.required" style="color: crimson">Le pseudo est obligatoire</div>
-          <div *ngIf="pseudo?.errors.minlength" style="color: crimson">Le pseudo doit comporter au moins 2 caracteres
-          </div>
+          <div *ngIf="pseudo?.errors.minlength" style="color: crimson">Le nom doit comporter au moins 2 caractères</div>
+          <div *ngIf="pseudo?.errors.maxlength" style="color: crimson">Le nom peut comporter au maximum 100 caractères</div>
           <div *ngIf="pseudo?.errors.nomInvalid" style="color: crimson">Le pseudo est invalide</div>
         </div>
       </div>
@@ -37,7 +38,7 @@
         <input id="mail" type="text" pInputText placeholder="Mail" formControlName="mail" class="input-taille">
         <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="mat-error">
           <div *ngIf="mail?.errors.required" style="color: crimson">Le mail est obligatoire</div>
-          <div *ngIf="mail?.errors.nomInvalid" style="color: crimson">Le mail est invalide</div>
+          <div *ngIf="mail?.errors.email" style="color: crimson">Le mail est invalide</div>
         </div>
       </div>
     </div>
