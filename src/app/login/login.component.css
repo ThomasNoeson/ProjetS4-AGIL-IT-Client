@@ -1,0 +1,23 @@
+
+input {
+  width: 90%;
+  margin: 5%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+button {
+  width: 90%;
+  margin: 5%;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: cadetblue;
+  color: white;
+}
+
