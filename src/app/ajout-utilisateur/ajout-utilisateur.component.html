@@ -1,5 +1,5 @@
 <p-card header="Ajouter un utilisateur" [style]="{width: '360px', margin: '10% auto 0 auto'}" styleClass="p-card-shadow">
-  <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+  <form [formGroup]="formulaire">
     <div class="p-formgroup">
       <div class="p-field">
         <input id="nom" type="text" pInputText placeholder="Nom" formControlName="nom" class="input-taille">
@@ -34,20 +34,20 @@
     </div>
     <div class="p-formgroup">
       <div class="p-field">
-        <input id="email" type="text" pInputText placeholder="Mail" formControlName="email" class="input-taille">
-        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="mat-error">
-          <div *ngIf="email?.errors.required" style="color: crimson">Le mail est obligatoire</div>
-          <div *ngIf="email?.errors.nomInvalid" style="color: crimson">Le mail est invalide</div>
+        <input id="mail" type="text" pInputText placeholder="Mail" formControlName="mail" class="input-taille">
+        <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="mat-error">
+          <div *ngIf="mail?.errors.required" style="color: crimson">Le mail est obligatoire</div>
+          <div *ngIf="mail?.errors.nomInvalid" style="color: crimson">Le mail est invalide</div>
         </div>
       </div>
     </div>
-    <div formGroupName="pwd">
+    <div formGroupName="password">
       <div class="p-formgroup">
         <div class="p-field">
-          <input id="password" type="text" pInputText placeholder="Mot de passe" formControlName="password" class="input-taille">
-          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="mat-error">
-            <div *ngIf="password?.errors.required" style="color: crimson">Le mot de passe est obligatoire</div>
-            <div *ngIf="password?.errors.nomInvalid" style="color: crimson">Le mot de passe est invalide</div>
+          <input id="pwd" type="text" pInputText placeholder="Mot de passe" formControlName="pwd" class="input-taille">
+          <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)" class="mat-error">
+            <div *ngIf="pwd?.errors.required" style="color: crimson">Le mot de passe est obligatoire</div>
+            <div *ngIf="pwd?.errors.nomInvalid" style="color: crimson">Le mot de passe est invalide</div>
           </div>
         </div>
       </div>

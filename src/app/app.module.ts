@@ -35,6 +35,8 @@ import {PanelModule} from 'primeng/panel';
 import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/dropdown';
 import {GameDetailsComponent} from './game-details/game-details.component';
+import {AjoutJeuxComponent } from './ajout-jeux/ajout-jeux.component';
+
 
 registerLocaleData(localeFr, 'fr');
 
@@ -47,7 +49,8 @@ registerLocaleData(localeFr, 'fr');
     AcceuilComponent,
     JeuxComponent,
     AjoutUtilisateurComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    AjoutJeuxComponent
   ],
   imports: [
     BrowserModule,
