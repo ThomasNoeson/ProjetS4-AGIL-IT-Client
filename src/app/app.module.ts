@@ -5,8 +5,8 @@ import localeFr from '@angular/common/locales/fr';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthentificationService} from './_services/authentification.service';
 import {MessagesModule} from 'primeng/messages';
 import {ToastModule} from 'primeng/toast';
@@ -35,6 +35,9 @@ import {PanelModule} from 'primeng/panel';
 import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/dropdown';
 import {GameDetailsComponent} from './game-details/game-details.component';
+import {AjoutJeuxComponent } from './ajout-jeux/ajout-jeux.component';
+import { AchatComponent } from './achat/achat.component';
+
 
 registerLocaleData(localeFr, 'fr');
 
@@ -47,7 +50,9 @@ registerLocaleData(localeFr, 'fr');
     AcceuilComponent,
     JeuxComponent,
     AjoutUtilisateurComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    AjoutJeuxComponent,
+    AchatComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,11 @@ registerLocaleData(localeFr, 'fr');
     CardModule,
     PanelModule,
     DataViewModule,
-    DropdownModule
+    DropdownModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},

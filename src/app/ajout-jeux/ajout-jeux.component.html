@@ -1,56 +1,113 @@
-<form [formGroup]="formulaire">
-  <div>
-    Nom : <input type="text" formControlName="nom"><br>
-  </div>
-  <br>
-  <div>
-    Description : <input type="text" formControlName="description"><br>
-  </div>
-  <br>
-  <div>
-    Thème : <input type="text" formControlName="theme" ><br>
-  </div>
-  <br>
-  <div>
-    Editeur : <input type="text" formControlName="editeur"><br>
-  </div>
-  <br>
-  <div>
-    Mecanique : <input type="text" formControlName="mecanique"><br>
-  </div>
-  <br>
-  <div>
-    Url_media : <input type="string" formControlName="url_media"><br>
-  </div>
-  <br>
-  <div>
-    Categorie : <input type="text" formControlName="categorie"><br>
-  </div>
-  <br>
-  <div>
-    Regles : <input type="text" formControlName="regles"><br>
-  </div>
-  <br>
-  <div>
-    Langue : <input type="string" formControlName="langue"><br>
-  </div>
-  <br>
-  <div>
-    Nombre de joueurs : <input type="number" formControlName="nombrejoueurs" ><br>
-  </div>
-  <br>
-  <div>
-    Age minimum : <input type="number" formControlName="ageminimum" ><br>
-  </div>
-  <br>
-  <div>
-    Poids : <input type="double" step="0.1"  formControlName="poids" ><br>
-  </div>
-  <br>
-  <div>
-    Duree : <input type="time" formControlName="duree"><br>
-  </div>
-  <br>
-  <button [disabled]="!formulaire.valid">Valide</button>
+<p-card header="Ajouter un jeu" [style]="{width: '360px', margin: '10% auto 0 auto'}" styleClass="p-card-shadow">
+  <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+    <div class="p-formgroup">
+      <div class="p-field">
+        <label for="nom" class="p-sr-only">Nom</label>
+        <input id="nom" type="text" pInputText placeholder="Nom" formControlName="nom">
+        <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="mat-error">
+          <div *ngIf="nom?.errors.required" style="color: crimson">Le nom est obligatoire</div>
+          <div *ngIf="nom?.errors.minlength"  style="color: crimson">Le nom doit comporter au moins 10 caractères</div>
+          <div *ngIf="nom?.errors.maxlength"  style="color: crimson">Le nom ne doit pas comporter plus de 100 caractères</div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="description" class="p-sr-only">Description</label>
+          <input id="description" type="text" pInputText placeholder="Description" formControlName="description">
+          <div *ngIf="description.invalid && (description.dirty || description.touched)" class="mat-error">
+            <div *ngIf="description?.errors.required" style="color: crimson">La description est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="theme" class="p-sr-only">Thème</label>
+          <input id="theme" type="number" pInputText placeholder="Thème" formControlName="theme">
+          <div *ngIf="theme.invalid && (theme.dirty || theme.touched)" class="mat-error">
+            <div *ngIf="theme?.errors.required" style="color: crimson">Le thème est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="editeur" class="p-sr-only">Editeur</label>
+          <input id="editeur" type="number" pInputText placeholder="Editeur" formControlName="editeur">
+          <div *ngIf="editeur.invalid && (editeur.dirty || editeur.touched)" class="mat-error">
+            <div *ngIf="editeur?.errors.required" style="color: crimson">L'éditeur est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="langues" class="p-sr-only">Langues</label>
+          <input id="langues" type="text" pInputText placeholder="Langues" formControlName="langues">
+          <div *ngIf="langues.invalid && (langues.dirty || langues.touched)" class="mat-error">
+            <div *ngIf="langues?.errors.required" style="color: crimson">Le nombre de joueurs est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="age" class="p-sr-only">Age minimum</label>
+          <input id="age" type="text" pInputText placeholder="Age minimum" formControlName="age">
+          <div *ngIf="age.invalid && (age.dirty || age.touched)" class="mat-error">
+            <div *ngIf="age?.errors.required" style="color: crimson">L'âge minimum est obligatoire</div>
+            <div *ngIf="age?.errors.pattern" style="color: crimson">L'âge doit être compris entre 1 et 16</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="poids" class="p-sr-only">Poids</label>
+          <input id="poids" type="text" pInputText placeholder="Poids" formControlName="poids">
+          <div *ngIf="poids.invalid && (poids.dirty || poids.touched)" class="mat-error">
+            <div *ngIf="poids?.errors.required" style="color: crimson">Le poids est obligatoire</div>
+            <div *ngIf="poids?.errors.pattern" style="color: crimson">Le poids doit être compris entre 0.100 et 5.00 kg</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="nombre_joueurs" class="p-sr-only">Nombre de Joueurs</label>
+          <input id="nombre_joueurs" type="text" pInputText placeholder="Nombre de Joueurs" formControlName="nombre_joueurs">
+          <div *ngIf="nombre_joueurs.invalid && (nombre_joueurs.dirty || nombre_joueurs.touched)" class="mat-error">
+            <div *ngIf="nombre_joueurs?.errors.required" style="color: crimson">Le nombre de joueurs est obligatoire</div>
+            <div *ngIf="nombre_joueurs?.errors.pattern" style="color: crimson">Le nombre de joueurs doit être compris entre 2 et 8</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="categorie" class="p-sr-only">Catégorie</label>
+          <input id="categorie" type="number" pInputText placeholder="Catégorie" formControlName="categorie">
+          <div *ngIf="categorie.invalid && (categorie.dirty || categorie.touched)" class="mat-error">
+            <div *ngIf="categorie?.errors.required" style="color: crimson">La catégorie est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="duree" class="p-sr-only">Durée</label>
+          <input id="duree" type="text" pInputText placeholder="Durée" formControlName="duree">
+          <div *ngIf="duree.invalid && (duree.dirty || duree.touched)" class="mat-error">
+            <div *ngIf="duree?.errors.required" style="color: crimson">La durée est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-formgroup">
+        <div class="p-field">
+          <label for="regles" class="p-sr-only">Règles</label>
+          <input id="regles" type="text" pInputText placeholder="Règles" formControlName="regles">
+          <div *ngIf="regles.invalid && (regles.dirty || regles.touched)" class="mat-error">
+            <div *ngIf="regles?.errors.required" style="color: crimson">Les règles sont obligatoire</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</form>
+    <button pButton type="submit" label="Ajouter le jeu" [disabled]="!formulaire.valid"></button>
+  </form>
+</p-card>
+
+
+

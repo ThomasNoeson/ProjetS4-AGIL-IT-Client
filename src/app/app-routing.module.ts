@@ -7,15 +7,19 @@ import {AcceuilComponent} from './acceuil/acceuil.component';
 import {JeuxComponent} from './jeux/jeux.component';
 import {AjoutUtilisateurComponent} from './ajout-utilisateur/ajout-utilisateur.component';
 import {GameDetailsComponent} from './game-details/game-details.component';
+import {AjoutJeuxComponent} from './ajout-jeux/ajout-jeux.component';
+import {AchatComponent} from './achat/achat.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'jeux', pathMatch: 'full'},
   {path: 'jeux', component: JeuxComponent},
   {path: 'create', component: AjoutUtilisateurComponent},
+  {path: 'ajout_jeux', component: AjoutJeuxComponent},
   {path: 'logout', component: AcceuilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'jeux/:id', component: GameDetailsComponent},
+  {path: 'achat', component: AchatComponent},
   {path: 'ro', component: LpSolverTestComponent}
 ];
 

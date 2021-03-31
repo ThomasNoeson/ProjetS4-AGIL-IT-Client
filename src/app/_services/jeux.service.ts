@@ -39,4 +39,20 @@ export class JeuxService {
         catchError(err => throwError(err))
       );
   }
+
+  creerJeux(jeux: JeuxInfo): void {
+    this.http.post(environment.apiUrl + '/jeux', {
+      nom: jeux.nom,
+      description: jeux.description,
+      theme: jeux.theme_id,
+      editeur: jeux.editeur_id,
+      langue: jeux.langue,
+      age: jeux.age,
+      poids: jeux.poids,
+      nombre_joueurs: jeux.nombre_joueurs,
+      categorie: jeux.categorie,
+      duree: jeux.duree,
+      regles: jeux.regles,
+    }, httpOptions).subscribe();
+  }
 }

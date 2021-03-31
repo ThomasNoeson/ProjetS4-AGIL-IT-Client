@@ -5,16 +5,22 @@
     Accueil
   </button>
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">
-    Login
+    Connexion
   </button>
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/create" routerLinkActive="active">
-    Create user
+    Nouvel utilisateur
   </button>
   <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/profile" routerLinkActive="active">
-    Profile
+    Profil
+  </button>
+  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/achat" routerLinkActive="active">
+    Ajouter un achat
+  </button>
+  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/ajout_jeux" routerLinkActive="active">
+    Ajouter un jeu
   </button>
   <button *ngIf="authService.isLoggedIn$ | async" mat-button (click)="logout()">
-    Logout
+    Déconnexion
   </button>
   <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/ro" routerLinkActive="active">
     Exercice RO
