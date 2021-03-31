@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
-import {MenuItem, MessageService} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 import {AuthentificationService} from './_services/authentification.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +10,8 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'ludotheque-client';
-  items: MenuItem[];
 
-  activeItem: MenuItem;
-
-constructor(public messageService: MessageService, public authService: AuthentificationService, private router: Router) {
+constructor(public messageService: MessageService, public authService: AuthentificationService) {
 }
 
   show(): void {
@@ -29,8 +25,5 @@ constructor(public messageService: MessageService, public authService: Authentif
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/acceuil']);
   }
-
-
 }

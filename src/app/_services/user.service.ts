@@ -24,14 +24,4 @@ export class UserService {
         catchError(err => throwError(err))
       );
   }
-
-  creerUser(user: UserInfo) {
-    this.http.post(environment.apiUrl + '/auth/register', {
-      nom: user.nom,
-      prenom: user.prenom,
-      pseudo: user.pseudo,
-      email: user.email,
-      password: user.password
-    }, httpOptions).subscribe();
-  }
 }

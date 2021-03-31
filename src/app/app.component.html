@@ -1,34 +1,11 @@
-<mat-toolbar>
-  <span>Ludothèque</span>
-  <span class="example-spacer"></span>
-  <button mat-button routerLink="/jeux" routerLinkActive="active">
-    Accueil
-  </button>
-  <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">
-    Connexion
-  </button>
-  <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/create" routerLinkActive="active">
-    Nouvel utilisateur
-  </button>
-  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/profile" routerLinkActive="active">
-    Profil
-  </button>
-  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/achat" routerLinkActive="active">
-    Ajouter un achat
-  </button>
-  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/ajout_jeux" routerLinkActive="active">
-    Ajouter un jeu
-  </button>
-  <button *ngIf="authService.isLoggedIn$ | async" mat-button (click)="logout()">
-    Déconnexion
-  </button>
-  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/ro" routerLinkActive="active">
-    Exercice RO
-  </button>
-</mat-toolbar>
-
+<ul>
+  <li *ngIf="authService.isLoggedOut$ | async"><a [routerLink]="['/login']">Login</a></li>
+  <li *ngIf="authService.isLoggedIn$ | async"><a [routerLink]="['/profile']">Profile</a></li>
+  <li *ngIf="authService.isLoggedIn$ | async"><button (click)="logout()">logout</button></li>
+  <li><a [routerLink]="['/ro']">Exo RO</a></li>
+</ul>
 <router-outlet></router-outlet>
 
 <p-toast position="top-right" key="main"></p-toast>
 
-<!--button (click)="show()">test</button>-->
+<button (click)="show()">test</button>

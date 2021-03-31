@@ -1,17 +1,9 @@
-<p-card header="{{user.id}} {{user.prenom}} {{user.nom}}" [style]="{width: '360px', margin: '10% auto 0 auto'}"
-        styleClass="p-card-shadow">
-  <div *ngIf="!loading">
-    <div class="row">
-      <h2>Adresse e-mail</h2>
-      <p>{{user.email}}</p>
-    </div>
-    <div class="row">
-      <h2>Première connexion</h2>
-      <p>{{user.created_at | amDateFormat:'LL'}} </p>
-    </div>
-    <div class="row">
-      <h2>Dernière modification du profil : </h2>
-      <p>{{user.updated_at | amDateFormat:'LL'}} </p>
-    </div>
-  </div>
-</p-card>
+<h3>Profile d'un utilisateur</h3>
+<br>
+<div *ngIf="!loading">
+  <h2>#{{user.id}} {{user.prenom}} {{user.nom}}</h2>
+  <p>{{user.email}}</p>
+
+  <p>Crée : {{user.created_at | amDateFormat:'LL'}} </p>
+  <p>Modifié : {{user.updated_at | amDateFormat:'LL'}} </p>
+</div>
