@@ -1,0 +1,37 @@
+<form [formGroup]="formulaire">
+
+    <div class="p-formgroup">
+      <div class="p-field">
+        <label for="lieu" class="p-sr-only">Lieu stockage du jeu</label>
+        <input id="lieu" type="text" pInputText placeholder="Lieu stockage du jeu" formControlName="lieu" class="input-taille">
+        <div *ngIf="lieu.invalid && (lieu.dirty || lieu.touched)" class="mat-error">
+          <div *ngIf="lieu?.errors.required" style="color: crimson">Le lieu de stockage est obligatoire</div>
+          <div *ngIf="lieu?.errors.nomInvalid" style="color: crimson">Le lieu de stockage est invalide</div>
+        </div>
+      </div>
+    </div>
+
+  <div class="p-formgroup">
+      <div class="p-field">
+        <label for="prix" class="p-sr-only">Prix d'achat</label>
+        <input id="prix" type="text" pInputText placeholder="Prix d'achat" formControlName="prix" class="input-taille">
+        <div *ngIf="prix.invalid && (prix.dirty || prix.touched)" class="mat-error">
+          <div *ngIf="prix?.errors.required" style="color: crimson">Le prix est obligatoire</div>
+          <div *ngIf="prix?.errors.nomInvalid" style="color: crimson">Le prix est ivalide</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="p-formgroup">
+      <div class="p-field">
+        <label for="date_achat" class="p-sr-only">Date achat du jeu</label>
+        <input id="date_achat" type="text" pInputText placeholder="Prix d'achat" formControlName="prix" class="input-taille">
+        <div *ngIf="date_achat.invalid && (date_achat.dirty ||date_achat.touched)" class="mat-error">
+          <div *ngIf="date_achat?.errors.required" style="color: crimson">La date d'achat est obligatoire</div>
+          <div *ngIf="date_achat?.errors.nomInvalid" style="color: crimson">La date d'achat est ivalide</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Valide</button>
+  </form>
