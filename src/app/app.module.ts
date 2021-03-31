@@ -17,7 +17,6 @@ import 'moment/locale/fr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {JwtInterceptorService} from './_services/jwt-interceptor.service';
 import { ProfileComponent } from './profile/profile.component';
-import { GameDetailsComponent } from './game-details/game-details.component';
 import {UserService} from './_services/user.service';
 import { LpSolverTestComponent } from './lp-solver-test/lp-solver-test.component';
 import {MarkdownModule} from 'ngx-markdown';
@@ -26,6 +25,15 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {ButtonModule} from 'primeng/button';
+import {CardModule} from 'primeng/card';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { JeuxComponent } from './jeux/jeux.component';
+import {JeuxService} from './_services/jeux.service';
+import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur.component';
+import {PanelModule} from 'primeng/panel';
+import {DataViewModule} from 'primeng/dataview';
+import {DropdownModule} from 'primeng/dropdown';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -34,8 +42,10 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    GameDetailsComponent,
-    LpSolverTestComponent
+    LpSolverTestComponent,
+    AcceuilComponent,
+    JeuxComponent,
+    AjoutUtilisateurComponent
   ],
   imports: [
     BrowserModule,
@@ -51,12 +61,18 @@ registerLocaleData(localeFr, 'fr');
     TabMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ButtonModule,
+    CardModule,
+    PanelModule,
+    DataViewModule,
+    DropdownModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
-    UserService
+    UserService,
+    JeuxService
   ],
   bootstrap: [AppComponent]
 })

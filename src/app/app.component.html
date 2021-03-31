@@ -1,8 +1,14 @@
 <mat-toolbar>
   <span>Ludothèque</span>
   <span class="example-spacer"></span>
+  <button mat-button routerLink="/jeux" routerLinkActive="active">
+    Acceuil
+  </button>
   <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/login" routerLinkActive="active">
     Login
+  </button>
+  <button *ngIf="authService.isLoggedOut$ | async" mat-button routerLink="/create" routerLinkActive="active">
+    Create user
   </button>
   <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/profile" routerLinkActive="active">
     Profile
@@ -10,14 +16,15 @@
   <button *ngIf="authService.isLoggedIn$ | async" mat-button (click)="logout()">
     Logout
   </button>
-  <button mat-button [routerLink]="['/ro']">
+  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/ro" routerLinkActive="active">
     Exercice RO
   </button>
 </mat-toolbar>
+
 
 
 <router-outlet></router-outlet>
 
 <p-toast position="top-right" key="main"></p-toast>
 
-<button (click)="show()">test</button>
+<!--button (click)="show()">test</button>-->

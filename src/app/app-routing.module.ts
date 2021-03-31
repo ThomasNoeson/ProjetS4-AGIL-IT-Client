@@ -3,13 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {ProfileComponent} from './profile/profile.component';
 import {LpSolverTestComponent} from './lp-solver-test/lp-solver-test.component';
-import {GameDetailsComponent} from './game-details/game-details.component';
+import {AcceuilComponent} from './acceuil/acceuil.component';
+import {JeuxComponent} from './jeux/jeux.component';
+import {AjoutUtilisateurComponent} from './ajout-utilisateur/ajout-utilisateur.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'jeux', pathMatch: 'full'},
+  {path: 'jeux', component: JeuxComponent},
+  {path: 'create', component: AjoutUtilisateurComponent},
+  {path: 'logout', component: AcceuilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'ro', component: LpSolverTestComponent},
-  {path: 'game/:id', component: GameDetailsComponent}
+  {path: 'ro', component: LpSolverTestComponent}
 ];
 
 @NgModule({

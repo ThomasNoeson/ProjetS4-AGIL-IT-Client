@@ -1,5 +1,4 @@
-
-input {
+.input-taille{
   width: 90%;
   margin: 5%;
   border-top: none;
@@ -8,7 +7,7 @@ input {
   outline: none;
 }
 
-button {
+.config-bouton {
   width: 90%;
   margin: 5%;
   background-color: white;
@@ -16,8 +15,7 @@ button {
   border-radius: 10px;
 }
 
-button:hover {
+.config-bouton:hover {
   background-color: cadetblue;
   color: white;
 }
-
