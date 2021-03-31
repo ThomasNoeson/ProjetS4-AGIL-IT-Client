@@ -16,7 +16,6 @@ export class AjoutJeuxComponent implements OnInit {
   });
 
   constructor() {
-
   }
 
   ngOnInit(): void {
@@ -42,3 +41,4 @@ export class AjoutJeuxComponent implements OnInit {
     return this.formulaire.get('poids');
   }
 }
+

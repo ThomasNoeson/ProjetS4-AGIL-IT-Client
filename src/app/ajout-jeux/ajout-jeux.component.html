@@ -1,5 +1,6 @@
 <p-card header="Ajouter un jeu" [style]="{width: '360px', margin: '10% auto 0 auto'}" styleClass="p-card-shadow">
   <form [formGroup]="formulaire">
+
     <div class="p-formgroup">
       <div class="p-field">
         <input id="nom" type="text" pInputText placeholder="Nom" formControlName="nom" class="input-taille">
@@ -10,21 +11,25 @@
         </div>
       </div>
     </div>
+
     <div class="p-formgroup">
       <div class="p-field">
         <input id="description" type="text" pInputText placeholder="Description" formControlName="description" class="input-taille">
       </div>
     </div>
+
     <div class="p-formgroup">
       <div class="p-field">
         <input id="theme" type="text" pInputText placeholder="Thème" formControlName="theme" class="input-taille">
       </div>
     </div>
+
     <div class="p-formgroup">
       <div class="p-field">
         <input id="editeur" type="text" pInputText placeholder="Éditeur" formControlName="editeur" class="input-taille">
       </div>
     </div>
+
     <div class="p-formgroup">
       <div class="p-field">
         <input id="mecanique" type="text" pInputText placeholder="Mécanique" formControlName="mecanique" class="input-taille">
@@ -41,11 +46,13 @@
         <input id="categorie" type="text" pInputText placeholder="Catégorie" formControlName="categorie" class="input-taille">
       </div>
     </div>
+
     <div class="p-formgroup">
       <div class="p-field">
         <input id="regles" type="text" pInputText placeholder="Règles" formControlName="regles" class="input-taille">
       </div>
     </div>
+
     <div class="p-formgroup">
       <div class="p-field">
         <input id="langue" type="text" pInputText placeholder="Langue" formControlName="langue" class="input-taille">
@@ -82,6 +89,7 @@
         <input id="duree" type="time" pInputText placeholder="Durée" formControlName="duree" class="input-taille">
       </div>
     </div>
+
     <button type="submit" class="config-bouton">Valide</button>
   </form>
 </p-card>

@@ -16,6 +16,9 @@
   <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/profile" routerLinkActive="active">
     Profile
   </button>
+  <button *ngIf="authService.isLoggedIn$ | async" mat-button routerLink="/achat" routerLinkActive="active">
+    Achat
+  </button>
   <button *ngIf="authService.isLoggedIn$ | async" mat-button (click)="logout()">
     Logout
   </button>

@@ -36,6 +36,7 @@ import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/dropdown';
 import {GameDetailsComponent} from './game-details/game-details.component';
 import {AjoutJeuxComponent } from './ajout-jeux/ajout-jeux.component';
+import { AchatComponent } from './achat/achat.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -50,7 +51,8 @@ registerLocaleData(localeFr, 'fr');
     JeuxComponent,
     AjoutUtilisateurComponent,
     GameDetailsComponent,
-    AjoutJeuxComponent
+    AjoutJeuxComponent,
+    AchatComponent
   ],
   imports: [
     BrowserModule,
